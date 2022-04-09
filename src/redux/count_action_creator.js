@@ -5,6 +5,8 @@ export const createIncreaseAction = value => ({type: INCREASE, data: value})
 export const createDecreaseAction = value => ({type: DECREASE, data: value})
 export const createIncreaseAsyncAction = (data, time) => {
     return () => {
-        setTimeout(createIncreaseAction(data), time)
+        setTimeout(() => {
+            store.dispatch(createIncreaseAction(data))
+        }, time)
     }
 }

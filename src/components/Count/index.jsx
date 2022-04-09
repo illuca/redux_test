@@ -19,13 +19,7 @@ class Count extends Component {
     }
     increaseSync = () => {
         const value = this.selectNumber.value * 1
-        createIncreaseAsyncAction(value, 500)
-    }
-
-    componentDidMount() {
-        store.subscribe(() => {
-            this.setState({})
-        })
+        store.dispatch(createIncreaseAsyncAction(value, 2000))
     }
 
     render() {
