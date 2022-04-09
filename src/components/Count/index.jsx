@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import store from "../../redux/store";
+import {createDecreaseAction, createIncreaseAction, createIncreaseAsyncAction} from "../../redux/count_action_creator";
 
 class Count extends Component {
     increase = () => {
         const value = this.selectNumber.value * 1
-        store.dispatch({type:'increase', data: value})
+        store.dispatch(createIncreaseAction(value))
     }
     decrease = () => {
         const value = this.selectNumber.value * 1
-        store.dispatch({type: 'decrease', data: value})
+        store.dispatch(createDecreaseAction(value))
     }
     increaseIfOdd = () => {
         const count = store.getState()
