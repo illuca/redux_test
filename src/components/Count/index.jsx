@@ -18,7 +18,8 @@ class Count extends Component {
         }
     }
     increaseSync = () => {
-        setTimeout(this.increase, 500)
+        const value = this.selectNumber.value * 1
+        createIncreaseAsyncAction(value, 500)
     }
 
     componentDidMount() {
