@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {createAddPersonAction} from "../../redux/action/person";
+import {createAddPersonAction} from "../../redux/actions/person";
 import {nanoid} from "nanoid";
 import store from "../../redux/store";
 

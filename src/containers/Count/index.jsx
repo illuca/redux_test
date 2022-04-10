@@ -1,5 +1,5 @@
 import store from "../../redux/store";
-import {createIncreaseAction, createIncreaseAsyncAction, createDecreaseAction} from "../../redux/action/count";
+import {createIncreaseAction, createIncreaseAsyncAction, createDecreaseAction} from "../../redux/actions/count";
 import React, {Component} from "react";
 
 const {connect} = require("react-redux");
@@ -50,7 +50,7 @@ const CountContainer = connect(
     // mapStateToProps
     (state) => {
         return {
-            count: state.totalCount,
+            count: state.count,
             personNum: state.persons.length
         }
     },
