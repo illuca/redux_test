@@ -14,7 +14,6 @@ const CountContainer = connect(
     {
         increase: createIncreaseAction,
         decrease: createDecreaseAction,
-        increaseIfOdd: createIncreaseAction,
         increaseSync: createIncreaseAsyncAction
     }
 )(CountUI)

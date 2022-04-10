@@ -12,7 +12,9 @@ class Count extends Component {
     }
     increaseIfOdd = () => {
         const value = this.selectNumber.value * 1
-        this.props.increaseIfOdd(value)
+        if (this.props.count % 2 == 1) {
+            this.props.increase(value)
+        }
     }
     increaseSync = () => {
         const value = this.selectNumber.value * 1
