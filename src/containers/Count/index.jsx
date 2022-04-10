@@ -4,9 +4,6 @@ import React, {Component} from "react";
 
 const {connect} = require("react-redux");
 
-
-
-
 class Count extends Component {
     increase = () => {
         const value = this.selectNumber.value * 1
@@ -30,12 +27,16 @@ class Count extends Component {
     render() {
         return (
             <div>
-                <p>当前求和为:{store.getState()}</p>
+                <h1>我是Count组件</h1>
+                <p>当前求和为:{this.props.count}</p>
                 <select ref={(elem) => this.selectNumber = elem}>
                     <option value={"1"}>1</option>
                     <option value={"2"}>2</option>
                     <option value={"3"}>3</option>
                 </select>
+                <div>
+                    person组件的总人数为:{this.props.personNum}
+                </div>
                 <button onClick={this.increase}>increase</button>
                 <button onClick={this.decrease}>decrease</button>
                 <button onClick={this.increaseIfOdd}>increaseIfOdd</button>
@@ -48,7 +49,10 @@ class Count extends Component {
 const CountContainer = connect(
     // mapStateToProps
     (state) => {
-        return {count: state}
+        return {
+            count: state.totalCount,
+            personNum: state.persons.length
+        }
     },
     // mapDispatchToProps
     {
