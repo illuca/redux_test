@@ -1,5 +1,5 @@
 import store from "../../redux/store";
-import {createIncreaseAction, createIncreaseAsyncAction, createDecreaseAction} from "../../redux/count_action_creator";
+import {createIncreaseAction, createIncreaseAsyncAction, createDecreaseAction} from "../../redux/action/count";
 import React, {Component} from "react";
 
 const {connect} = require("react-redux");
