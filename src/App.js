@@ -1,4 +1,5 @@
 import CountContainer from "./containers/Count";
+import store from "./redux/store";
 
 function App() {
   return (
